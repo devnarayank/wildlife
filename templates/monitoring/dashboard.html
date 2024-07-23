@@ -1,0 +1,12 @@
+{% extends 'monitoring/base.html' %}
+
+{% block content %}
+    <h2>Latest Observations</h2>
+    <ul>
+    {% for observation in latest_observations %}
+        <li>{{ observation.species }} observed at {{ observation.location }} (Confidence: {{ observation.confidence }})</li>
+    {% empty %}
+        <li>No observations yet.</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
